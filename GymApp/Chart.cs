@@ -26,7 +26,7 @@ namespace GymApp
         private void initializeData()
         {
             int i = 0;
-            foreach (XElement xEle in xelement.Descendants(fieldName))
+            foreach (XElement xEle in xelement.Descendants(fieldName).Reverse())
             {
                 double value = Convert.ToDouble(xEle.Value);
                 i++;
