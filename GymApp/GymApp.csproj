@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BMI.cs" />
+    <Compile Include="CaloricDemand.cs" />
     <Compile Include="DataManager.cs" />
     <Compile Include="FatTissue.cs" />
     <Compile Include="Form1.cs">

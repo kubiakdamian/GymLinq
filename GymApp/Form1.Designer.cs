@@ -47,7 +47,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.bmiData = new System.Windows.Forms.Label();
             this.fatData = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.caloricDemandLabel = new System.Windows.Forms.Label();
             this.bmiRating = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -192,7 +192,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.Location = new System.Drawing.Point(414, 290);
+            this.label8.Location = new System.Drawing.Point(373, 290);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(46, 22);
             this.label8.TabIndex = 16;
@@ -202,7 +202,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label9.Location = new System.Drawing.Point(414, 323);
+            this.label9.Location = new System.Drawing.Point(373, 323);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(100, 22);
             this.label9.TabIndex = 17;
@@ -212,17 +212,17 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label10.Location = new System.Drawing.Point(414, 357);
+            this.label10.Location = new System.Drawing.Point(373, 357);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(76, 22);
+            this.label10.Size = new System.Drawing.Size(206, 22);
             this.label10.TabIndex = 18;
-            this.label10.Text = "label10";
+            this.label10.Text = "Zapotrzebowanie kal.";
             // 
             // bmiData
             // 
             this.bmiData.AutoSize = true;
             this.bmiData.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.bmiData.Location = new System.Drawing.Point(517, 290);
+            this.bmiData.Location = new System.Drawing.Point(531, 290);
             this.bmiData.Name = "bmiData";
             this.bmiData.Size = new System.Drawing.Size(85, 22);
             this.bmiData.TabIndex = 19;
@@ -232,27 +232,27 @@
             // 
             this.fatData.AutoSize = true;
             this.fatData.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.fatData.Location = new System.Drawing.Point(517, 323);
+            this.fatData.Location = new System.Drawing.Point(622, 323);
             this.fatData.Name = "fatData";
             this.fatData.Size = new System.Drawing.Size(78, 22);
             this.fatData.TabIndex = 20;
             this.fatData.Text = "Fat data";
             // 
-            // label11
+            // caloricDemandLabel
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label11.Location = new System.Drawing.Point(517, 357);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(71, 22);
-            this.label11.TabIndex = 21;
-            this.label11.Text = "label11";
+            this.caloricDemandLabel.AutoSize = true;
+            this.caloricDemandLabel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.caloricDemandLabel.Location = new System.Drawing.Point(622, 357);
+            this.caloricDemandLabel.Name = "caloricDemandLabel";
+            this.caloricDemandLabel.Size = new System.Drawing.Size(69, 22);
+            this.caloricDemandLabel.TabIndex = 21;
+            this.caloricDemandLabel.Text = "Caloric";
             // 
             // bmiRating
             // 
             this.bmiRating.AutoSize = true;
             this.bmiRating.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.bmiRating.Location = new System.Drawing.Point(625, 290);
+            this.bmiRating.Location = new System.Drawing.Point(622, 290);
             this.bmiRating.Name = "bmiRating";
             this.bmiRating.Size = new System.Drawing.Size(64, 22);
             this.bmiRating.TabIndex = 22;
@@ -468,7 +468,7 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.bmiRating);
-            this.Controls.Add(this.label11);
+            this.Controls.Add(this.caloricDemandLabel);
             this.Controls.Add(this.fatData);
             this.Controls.Add(this.bmiData);
             this.Controls.Add(this.label10);
@@ -516,7 +516,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label bmiData;
         private System.Windows.Forms.Label fatData;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label caloricDemandLabel;
         private System.Windows.Forms.Label bmiRating;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;

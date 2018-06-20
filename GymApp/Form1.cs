@@ -16,6 +16,7 @@ namespace GymApp
         private DataManager dataManager;
         private BMI bmi;
         private FatTissue fatTissue;
+        private CaloricDemand caloricDemand;
         public Form1()
         {
             InitializeComponent();
@@ -44,6 +45,7 @@ namespace GymApp
             initializeFatTissue();
             initializeLatestMeasurements();
             initializeMeasurementsDifference();
+            initializeCaloricDemand();
         }
 
         private void initializeBMI()
@@ -61,6 +63,12 @@ namespace GymApp
             }
 
             initializeRating(bmi.calculateBMI());
+        }
+
+        private void initializeCaloricDemand()
+        {
+            caloricDemand = new CaloricDemand();
+            caloricDemandLabel.Text = caloricDemand.calculateCaloricDemand().ToString() + "kcal";
         }
 
         private void initializeFatTissue()
