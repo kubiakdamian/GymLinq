@@ -38,13 +38,22 @@ namespace GymApp
         private void initializeBMI()
         {
             bmi = new BMI();
-            bmiData.Text = bmi.calculateBMI();
+            bmiData.Text = bmi.calculateBMI().ToString();
+
+            if(bmi.calculateBMI() >= 18.5 && bmi.calculateBMI() <= 24.9)
+            {
+                bmiData.ForeColor = System.Drawing.Color.Green;
+            }
+            else
+            {
+                bmiData.ForeColor = System.Drawing.Color.Red;
+            }
         }
 
         private void initializeFatTissue()
         {
             fatTissue = new FatTissue();
-            fatData.Text = fatTissue.calculateFatTissue() + "%";
+            fatData.Text = fatTissue.calculateFatTissue().ToString() + "%";
         }
 
     }

@@ -13,11 +13,9 @@ namespace GymApp
         {
             dataManager = new DataManager();
         }
-        public String calculateBMI()
+        public double calculateBMI()
         {
-            double result = Math.Round(dataManager.getActualMeasurement("WEIGHT") / (dataManager.getActualMeasurement("HEIGHT") * dataManager.getActualMeasurement("HEIGHT") / 10000), 1);
-
-            return result.ToString();
+            return Math.Round(dataManager.getActualMeasurement("WEIGHT") / (dataManager.getActualMeasurement("HEIGHT") * dataManager.getActualMeasurement("HEIGHT") / 10000), 1);
         }
     }
 }

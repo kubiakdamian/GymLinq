@@ -1,6 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DATA>
   <MEASUREMENTS>
+    <WEIGHT>110</WEIGHT>
+    <HEIGHT>189</HEIGHT>
+    <WRIST>20</WRIST>
+    <ANKLE>24</ANKLE>
+    <WAIST>110</WAIST>
+    <NECK>32</NECK>
+  </MEASUREMENTS>
+  <MEASUREMENTS>
     <WEIGHT>80</WEIGHT>
     <HEIGHT>183</HEIGHT>
     <WRIST>20</WRIST>

@@ -14,12 +14,11 @@ namespace GymApp
             dataManager = new DataManager();
         }
 
-        public String calculateFatTissue()
+        public double calculateFatTissue()
         {
-            double result = Math.Round((1.63 * dataManager.getActualMeasurement("WAIST") - 0.18 * dataManager.getActualMeasurement("WEIGHT") - 98.42) /
+            return Math.Round((1.63 * dataManager.getActualMeasurement("WAIST") - 0.18 * dataManager.getActualMeasurement("WEIGHT") - 98.42) /
                             (dataManager.getActualMeasurement("WEIGHT") * 2.2) * 100, 1);
 
-            return result.ToString();
         }
     }
 }
