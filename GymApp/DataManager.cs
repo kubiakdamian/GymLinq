@@ -42,6 +42,11 @@ namespace GymApp
            return Convert.ToDouble(measurements.First().Element(measurement).Value);
         }
 
+        public XElement getMeasurementsAtChosenPlace(int place)
+        {
+            return xelement.Descendants("MEASUREMENTS").ElementAt(place);
+        }
+
         private void printData(IEnumerable<XElement> measurements)
         {
             foreach (var measurement in measurements)

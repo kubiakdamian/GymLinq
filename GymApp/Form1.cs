@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace GymApp
 {
@@ -21,6 +22,8 @@ namespace GymApp
             dataManager = new DataManager();
             initializeBMI();
             initializeFatTissue();
+            initializeLatestMeasurements();
+            initializeMeasurementsDifference();
         }
 
         private void chart1_Click(object sender, EventArgs e)
@@ -33,6 +36,8 @@ namespace GymApp
             dataManager.saveData(weightBox.Text, heightBox.Text, wristBox.Text, ankleBox.Text, waistBox.Text, neckBox.Text);
             initializeBMI();
             initializeFatTissue();
+            initializeLatestMeasurements();
+            initializeMeasurementsDifference();
         }
 
         private void initializeBMI()
@@ -48,6 +53,8 @@ namespace GymApp
             {
                 bmiData.ForeColor = System.Drawing.Color.Red;
             }
+
+            initializeRating(bmi.calculateBMI());
         }
 
         private void initializeFatTissue()
@@ -56,5 +63,106 @@ namespace GymApp
             fatData.Text = fatTissue.calculateFatTissue().ToString() + "%";
         }
 
+        private void initializeRating(double bmiFactor)
+        {
+            if(bmiFactor < 18.5)
+            {
+                bmiRating.Text = "niedowaga";
+                bmiRating.ForeColor = System.Drawing.Color.Red;
+            }
+            else if(bmiFactor >= 18.5 && bmiFactor <= 24.9)
+            {
+                bmiRating.Text = "w normie";
+                bmiRating.ForeColor = System.Drawing.Color.Green;
+            }
+            else if (bmiFactor >= 25 && bmiFactor <= 29.9)
+            {
+                bmiRating.Text = "nadwaga";
+                bmiRating.ForeColor = System.Drawing.Color.Red;
+            }
+            else if (bmiFactor >= 30)
+            {
+                bmiRating.Text = "otyłość";
+                bmiRating.ForeColor = System.Drawing.Color.DarkRed;
+            }
+
+        }
+
+        private void initializeLatestMeasurements()
+        {
+            XElement element = dataManager.getMeasurementsAtChosenPlace(0);
+            actualWeight.Text = element.Element("WEIGHT").Value.ToString() + "kg";
+            actualHeight.Text = element.Element("HEIGHT").Value.ToString() + "cm";
+            actualWrist.Text = element.Element("WRIST").Value.ToString() + "cm";
+            actualAnkle.Text = element.Element("ANKLE").Value.ToString() + "cm";
+            actualNeck.Text = element.Element("NECK").Value.ToString() + "cm";
+            actualWaist.Text = element.Element("WAIST").Value.ToString() + "cm";
+        }
+
+        private void initializeMeasurementsDifference()
+        {
+            setDiffLabelText(weightDiff, "WEIGHT");
+            setDiffLabelText(heightDiff, "HEIGHT");
+            setDiffLabelText(wristDiff, "WRIST");
+            setDiffLabelText(ankleDiff, "ANKLE");
+            setDiffLabelText(neckDiff, "NECK");
+            setDiffLabelText(waistDiff, "WAIST");
+        }
+
+        private void setDiffLabelText(Label label, String elementName)
+        {
+            double diff = 0;
+            XElement latestMeasurements = dataManager.getMeasurementsAtChosenPlace(0);
+            XElement previousMeasurements = dataManager.getMeasurementsAtChosenPlace(1);
+
+            diff = Math.Round(Convert.ToDouble(latestMeasurements.Element(elementName).Value) - Convert.ToDouble(previousMeasurements.Element(elementName).Value), 1);
+            if(elementName == "WEIGHT")
+            {
+                if(diff > 0)
+                {
+                    label.Text = "+" + diff + "kg";
+                }
+                else
+                {
+                    label.Text = diff + "kg";
+                }            
+            }
+            else
+            {
+                if (diff > 0)
+                {
+                    label.Text = "+" + diff + "cm";
+                }
+                else
+                {
+                    label.Text = diff + "cm";
+                }
+            }
+
+            setDiffLabelColor(label, diff);
+            
+        }
+
+        private void setDiffLabelColor(Label label, double diff)
+        {
+            if (diff >= 0)
+            {
+                label.ForeColor = System.Drawing.Color.Red;
+            }
+            else
+            {
+                label.ForeColor = System.Drawing.Color.Green;
+            }
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label26_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
