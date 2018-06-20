@@ -20,10 +20,7 @@ namespace GymApp
         {
             InitializeComponent();
             dataManager = new DataManager();
-            initializeBMI();
-            initializeFatTissue();
-            initializeLatestMeasurements();
-            initializeMeasurementsDifference();
+            initializeData();
         }
 
         private void chart1_Click(object sender, EventArgs e)
@@ -33,7 +30,16 @@ namespace GymApp
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            dataManager.saveData(weightBox.Text, heightBox.Text, wristBox.Text, ankleBox.Text, waistBox.Text, neckBox.Text);
+            if (checkConditions())
+            {
+                dataManager.saveData(weightBox.Text, heightBox.Text, wristBox.Text, ankleBox.Text, waistBox.Text, neckBox.Text);
+                initializeData();
+            }
+            
+        }
+
+        private void initializeData()
+        {
             initializeBMI();
             initializeFatTissue();
             initializeLatestMeasurements();
@@ -152,6 +158,50 @@ namespace GymApp
             else
             {
                 label.ForeColor = System.Drawing.Color.Green;
+            }
+        }
+
+        private bool checkCondition(TextBox textBox, double minVal, double maxVal, String message)
+        {
+            bool isCorrect = true;
+            double value;
+
+            if (Double.TryParse(textBox.Text, out value))
+            {
+                value = Math.Round(Convert.ToDouble(textBox.Text), 1);
+                Console.WriteLine(value);
+                if (value <= minVal || value >= maxVal)
+                {
+                    MessageBox.Show(message);
+                    textBox.Text = "";
+                    isCorrect = false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Należy wprowadzić liczbę z ',' jako separatorem dziesiętnym.");
+                textBox.Text = "";
+                isCorrect = false;
+            }
+
+            return isCorrect;
+        }
+
+        private bool checkConditions()
+        {
+            //weightBox.Text, heightBox.Text, wristBox.Text, ankleBox.Text, waistBox.Text, neckBox.Text
+            if (checkCondition(weightBox, 0, 500, "Waga musi znajdować się w przedziale 0-500kg")&&
+               checkCondition(heightBox, 100, 280, "Wzrost musi znajdować się w przedziale 100-280cm")&&
+               checkCondition(wristBox, 10, 30, "Nadgarstek musi znajdować się w przedziale 10-30cm")&&
+               checkCondition(ankleBox, 10, 40, "Kostka musi znajdować się w przedziale 10-40cm")&&
+               checkCondition(waistBox, 40, 200, "Pas musi znajdować się w przedziale 40-200cm")&&
+               checkCondition(neckBox, 15, 60, "Kark musi znajdować się w przedziale 15-60cm"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 
