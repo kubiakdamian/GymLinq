@@ -13,16 +13,18 @@ namespace GymApp
         private XElement xelement;
         private IEnumerable<XElement> measurements;
 
+        public XElement Xelement { get => xelement; set => xelement = value; }
+
         public DataManager()
         {
             this.path = "../../data.xml";
-            xelement = XElement.Load(path);
-            measurements = xelement.Elements();
+            Xelement = XElement.Load(path);
+            measurements = Xelement.Elements();
         }
 
         public void saveData(String weight, String height, String wrist, String ankle, String waist, String neck)
         {
-            xelement.AddFirst(new XElement("MEASUREMENTS",
+            Xelement.AddFirst(new XElement("MEASUREMENTS",
             new XElement("WEIGHT", weight),
             new XElement("HEIGHT", height),
             new XElement("WRIST", wrist),
@@ -30,9 +32,9 @@ namespace GymApp
             new XElement("WAIST", waist),
             new XElement("NECK", neck)));
 
-            xelement.Save("../../data.xml");
+            Xelement.Save("../../data.xml");
 
-            Console.Write(xelement);
+            Console.Write(Xelement);
 
             //printData(measurements);
         }
@@ -44,7 +46,7 @@ namespace GymApp
 
         public XElement getMeasurementsAtChosenPlace(int place)
         {
-            return xelement.Descendants("MEASUREMENTS").ElementAt(place);
+            return Xelement.Descendants("MEASUREMENTS").ElementAt(place);
         }
 
         private void printData(IEnumerable<XElement> measurements)

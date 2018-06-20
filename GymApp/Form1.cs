@@ -161,11 +161,11 @@ namespace GymApp
         {
             if (diff >= 0)
             {
-                label.ForeColor = System.Drawing.Color.Red;
+                label.ForeColor = System.Drawing.Color.Green;
             }
             else
             {
-                label.ForeColor = System.Drawing.Color.Green;
+                label.ForeColor = System.Drawing.Color.Red;
             }
         }
 
@@ -200,8 +200,8 @@ namespace GymApp
             //weightBox.Text, heightBox.Text, wristBox.Text, ankleBox.Text, waistBox.Text, neckBox.Text
             if (checkCondition(weightBox, 0, 500, "Waga musi znajdować się w przedziale 0-500kg")&&
                checkCondition(heightBox, 100, 280, "Wzrost musi znajdować się w przedziale 100-280cm")&&
-               checkCondition(wristBox, 10, 30, "Nadgarstek musi znajdować się w przedziale 10-30cm")&&
-               checkCondition(ankleBox, 10, 40, "Kostka musi znajdować się w przedziale 10-40cm")&&
+               checkCondition(wristBox, 20, 70, "Biceps musi znajdować się w przedziale 20-70cm")&&
+               checkCondition(ankleBox, 50, 200, "Klatka piersiowa musi znajdować się w przedziale 50-200cm")&&
                checkCondition(waistBox, 40, 200, "Pas musi znajdować się w przedziale 40-200cm")&&
                checkCondition(neckBox, 15, 60, "Kark musi znajdować się w przedziale 15-60cm"))
             {
@@ -215,7 +215,8 @@ namespace GymApp
 
         private void label14_Click(object sender, EventArgs e)
         {
-            
+            Chart chart = new Chart("WEIGHT", dataManager.Xelement);
+            chart.Show();
         }
 
         private void label26_Click(object sender, EventArgs e)

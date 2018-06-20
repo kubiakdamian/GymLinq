@@ -157,18 +157,18 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(81, 163);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 13);
+            this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 12;
-            this.label4.Text = "nadgarstek";
+            this.label4.Text = "biceps";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(81, 189);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(39, 13);
+            this.label5.Size = new System.Drawing.Size(59, 13);
             this.label5.TabIndex = 13;
-            this.label5.Text = "kostka";
+            this.label5.Text = "klatka pier.";
             // 
             // label6
             // 
@@ -356,9 +356,9 @@
             this.label22.AutoSize = true;
             this.label22.Location = new System.Drawing.Point(403, 170);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(62, 13);
+            this.label22.Size = new System.Drawing.Size(39, 13);
             this.label22.TabIndex = 31;
-            this.label22.Text = "Nadgarstek";
+            this.label22.Text = "Biceps";
             // 
             // ankleDiff
             // 
@@ -383,9 +383,9 @@
             this.label25.AutoSize = true;
             this.label25.Location = new System.Drawing.Point(403, 196);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(40, 13);
+            this.label25.Size = new System.Drawing.Size(84, 13);
             this.label25.TabIndex = 34;
-            this.label25.Text = "Kostka";
+            this.label25.Text = "Klatka piersiowa";
             // 
             // neckDiff
             // 
