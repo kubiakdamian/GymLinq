@@ -31,7 +31,6 @@ namespace GymApp
                 double value = Convert.ToDouble(xEle.Value);
                 i++;
                 this.chart1.Series["Measurement"].Points.AddXY(i, value);
-                Console.WriteLine((double)xEle);
             }
         }
 

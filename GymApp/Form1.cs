@@ -223,5 +223,35 @@ namespace GymApp
         {
 
         }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+            Chart chart = new Chart("HEIGHT", dataManager.Xelement);
+            chart.Show();
+        }
+
+        private void label22_Click(object sender, EventArgs e)
+        {
+            Chart chart = new Chart("WRIST", dataManager.Xelement);
+            chart.Show();
+        }
+
+        private void label25_Click(object sender, EventArgs e)
+        {
+            Chart chart = new Chart("ANKLE", dataManager.Xelement);
+            chart.Show();
+        }
+
+        private void label28_Click(object sender, EventArgs e)
+        {
+            Chart chart = new Chart("NECK", dataManager.Xelement);
+            chart.Show();
+        }
+
+        private void label31_Click(object sender, EventArgs e)
+        {
+            Chart chart = new Chart("WAIST", dataManager.Xelement);
+            chart.Show();
+        }
     }
 }

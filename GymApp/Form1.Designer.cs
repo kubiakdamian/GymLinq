@@ -332,6 +332,7 @@
             this.label19.Size = new System.Drawing.Size(40, 13);
             this.label19.TabIndex = 28;
             this.label19.Text = "Wzrost";
+            this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // wristDiff
             // 
@@ -359,6 +360,7 @@
             this.label22.Size = new System.Drawing.Size(39, 13);
             this.label22.TabIndex = 31;
             this.label22.Text = "Biceps";
+            this.label22.Click += new System.EventHandler(this.label22_Click);
             // 
             // ankleDiff
             // 
@@ -386,6 +388,7 @@
             this.label25.Size = new System.Drawing.Size(84, 13);
             this.label25.TabIndex = 34;
             this.label25.Text = "Klatka piersiowa";
+            this.label25.Click += new System.EventHandler(this.label25_Click);
             // 
             // neckDiff
             // 
@@ -414,6 +417,7 @@
             this.label28.Size = new System.Drawing.Size(29, 13);
             this.label28.TabIndex = 37;
             this.label28.Text = "Kark";
+            this.label28.Click += new System.EventHandler(this.label28_Click);
             // 
             // waistDiff
             // 
@@ -441,6 +445,7 @@
             this.label31.Size = new System.Drawing.Size(25, 13);
             this.label31.TabIndex = 40;
             this.label31.Text = "Pas";
+            this.label31.Click += new System.EventHandler(this.label31_Click);
             // 
             // Form1
             // 
